@@ -76,7 +76,7 @@ export function Coaster({ className }: { className?: string }) {
       <text x="200" y="238" textAnchor="middle" className="font-display" fontWeight="900" fontSize="124" fill="var(--brand-ink)">
         FRY
       </text>
-      <text x="200" y="274" textAnchor="middle" fontSize="14" fontWeight="600" letterSpacing="6" fill="var(--brand-ink)">
+      <text x="200" y="266" textAnchor="middle" fontSize="13" fontWeight="600" letterSpacing="4" fill="var(--brand-ink)">
         НОВОСИБИРСК
       </text>
     </svg>

@@ -62,8 +62,8 @@ export function Hero() {
               <figure className="kraft -rotate-[5deg] rounded-[var(--radius)] p-2 pb-2.5 shadow-[var(--shadow-lift)] sm:p-3">
                 <div className="photo-frame aspect-[4/5] rounded-[calc(var(--radius)-3px)]">
                   <Image
-                    src={photos.heroTacos}
-                    alt="Три тако с рваной свининой на фирменной бумаге FRY и стакан тёмного пива"
+                    src={photos.fries}
+                    alt="Две порции фри с зеленью на фирменной бумаге FRY и сырный соус"
                     fill
                     quality={75}
                     sizes="(min-width: 1440px) 300px, (min-width: 1024px) 21vw, (min-width: 576px) 290px, 52vw"
@@ -71,8 +71,8 @@ export function Hero() {
                   />
                 </div>
                 <figcaption className="mt-2 flex items-baseline justify-between gap-2 font-display text-[clamp(1rem,3.6vw,1.45rem)] font-black uppercase leading-none">
-                  <span>Тако BBQ</span>
-                  <span className="text-[var(--red-deep)]">FRY</span>
+                  <span>Фри классик</span>
+                  <span className="text-[var(--red-deep)]">290&nbsp;₽</span>
                 </figcaption>
               </figure>
             </div>

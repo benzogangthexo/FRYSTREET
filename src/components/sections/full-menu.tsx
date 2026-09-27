@@ -44,7 +44,7 @@ const toRows = (items: MenuItem[]): HoverImageItem[] =>
     return {
       id: item.id,
       title: <Title item={item} />,
-      meta: <span className="line-clamp-2 text-[0.92rem] leading-snug">{item.description}</span>,
+      meta: <span className="line-clamp-3 text-[0.92rem] leading-snug">{item.description}</span>,
       aside: <Price price={item.price} />,
       image: photo?.src,
       alt: photo?.alt,
@@ -67,7 +67,7 @@ function SkeletonList({ items }: { items: MenuItem[] }) {
                 </span>
               </span>
               <span className="mt-1 block">
-                <span className="skel-text line-clamp-2 text-[0.92rem] leading-snug">{item.description}</span>
+                <span className="skel-text line-clamp-3 text-[0.92rem] leading-snug">{item.description}</span>
               </span>
             </span>
             <span className="shrink-0 text-right">

@@ -104,8 +104,9 @@ function TrayCard({ tray, index, total }: { tray: Tray; index: number; total: nu
         </div>
       ) : (
         <div className="m-2 flex min-h-0 flex-col justify-center overflow-hidden rounded-[calc(var(--radius)-2px)] bg-[color-mix(in_oklab,black_16%,var(--brand))] p-4 md:col-span-5 md:m-3 md:p-8">
-          <p className="t-eyebrow">Соусы, 30 г</p>
-          <ul className="mt-3 flex flex-wrap gap-1.5 md:mt-5 md:gap-2" aria-label="Соусы">
+          <p className="t-eyebrow">Соус к чему угодно, 30 г</p>
+          <p className="mt-1 font-display text-[clamp(3rem,2rem+5vw,6.5rem)] font-black uppercase leading-[0.85]">50&nbsp;₽</p>
+          <ul className="mt-3 flex flex-wrap gap-1.5 md:mt-6 md:gap-2" aria-label="Соусы">
             {sauces.map((s, i) => (
               <li
                 key={s}
