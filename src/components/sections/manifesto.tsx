@@ -19,8 +19,8 @@ export function Manifesto() {
         <WordReveal
           as="p"
           className="mt-8 max-w-[18ch] font-display text-[clamp(2.6rem,1.4rem+5.6vw,8rem)] font-black uppercase leading-[0.9]"
-          text="Бар во дворе на Ленина. Пиво с кранов, сидр, свои настойки и еда, которую едят руками."
-          accent={[12, 13, 14, 15]}
+          text="Паб в самом центре Новосибирска. Едят руками, пьют с кранов, тусуются во дворе."
+          accent={[10, 11, 12]}
           accentClassName="text-paper-ink"
         />
         <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-12 md:items-end">

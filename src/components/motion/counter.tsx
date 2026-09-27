@@ -3,7 +3,7 @@
 import { animate, inView } from "motion";
 import { useEffect, useRef } from "react";
 
-import { motionAllowed } from "./use-scroll-anim";
+import { motionAllowed, onIdle } from "./use-scroll-anim";
 
 /** Число: финальное значение уже в HTML; считает от 0 только если было ниже сгиба */
 export function Counter({
@@ -21,10 +21,13 @@ export function Counter({
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || !motionAllowed() || el.getBoundingClientRect().top < window.innerHeight) return;
+    if (!el || !motionAllowed()) return;
     const fmt = new Intl.NumberFormat("ru-RU", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+    let stop: (() => void) | undefined;
+    const cancel = onIdle(() => {
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
     el.textContent = fmt.format(0);
-    const stop = inView(
+    stop = inView(
       el,
       () => {
         animate(0, value, {
@@ -37,8 +40,10 @@ export function Counter({
       },
       { amount: 0.6 },
     );
+    });
     return () => {
-      stop();
+      cancel();
+      stop?.();
       el.textContent = fmt.format(value);
     };
   }, [value, decimals]);

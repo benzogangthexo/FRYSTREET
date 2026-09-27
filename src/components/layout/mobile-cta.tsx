@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { cn, telHref } from "@/lib/utils";
 
 /**
- * Нижняя липкая панель на телефоне: появляется после hero, прячется у секции записи.
+ * Нижняя липкая панель на телефоне: видна, когда кнопка брони из hero (heroId) не в кадре, прячется у секции записи.
  * Двигается только transform; учитывает safe-area-inset-bottom.
  */
 export function MobileCta({
@@ -32,7 +32,7 @@ export function MobileCta({
     const target = document.getElementById(targetId);
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) {
-        if (e.target === hero) setPastHero(!e.isIntersecting && e.boundingClientRect.top < 0);
+        if (e.target === hero) setPastHero(!e.isIntersecting);
         if (e.target === target) setAtTarget(e.isIntersecting);
       }
     });
@@ -45,7 +45,7 @@ export function MobileCta({
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 border-t border-line bg-[color-mix(in_oklab,var(--bg)_88%,transparent)] px-4 pt-3 backdrop-blur-md transition-transform duration-500 ease-[var(--ease-out-expo)] md:hidden",
+        "fixed inset-x-0 bottom-0 z-50 border-t border-line bg-[color-mix(in_oklab,var(--bg)_96%,transparent)] px-4 pt-3 transition-transform duration-500 ease-[var(--ease-out-expo)] md:hidden",
         "pb-[max(0.75rem,env(safe-area-inset-bottom))]",
         visible ? "translate-y-0" : "pointer-events-none translate-y-full",
         className,

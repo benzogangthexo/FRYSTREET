@@ -22,12 +22,12 @@ export function MenuList() {
               {n} {word}
               <br />
               <span className="outline-type">
-                {Math.min(...prices)}-{Math.max(...prices)} ₽
+                {Math.min(...prices)}-{Math.max(...prices)}&nbsp;₽
               </span>
             </h2>
           </div>
           <p className="t-lead text-fg-muted lg:col-span-4 lg:col-start-9">
-            Наведите на блюдо, покажем фото, если оно есть. Соусы по 50 ₽ к чему угодно.
+            Фото есть не у всех блюд: где есть, покажем. Соусы по 50&nbsp;₽ к чему угодно.
           </p>
         </div>
         <div className="mt-12 sm:mt-16">

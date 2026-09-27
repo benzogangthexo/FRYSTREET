@@ -49,13 +49,13 @@ export const menu: MenuItem[] = [
   { id: "lukovye-kolca", category: "snacks", name: "Луковые кольца", description: "В панировке", price: 250 },
   { id: "chechil-fri", category: "snacks", name: "Чечил фри", description: "Сыр-косичка из пивнухи, только моднее", price: 190 },
   { id: "grenki", category: "snacks", name: "Чесночные гренки", description: "Чесночный бро для твоего пивка", price: 150 },
-  { id: "myasnye-sneki", category: "snacks", name: "Мясные снеки", description: "Свинина", price: 250, unit: "50 г" },
+  { id: "myasnye-sneki", category: "snacks", name: "Мясные снеки", description: "Свинина", price: 250, unit: "50\u00a0г" },
   { id: "arahis", category: "snacks", name: "Арахис", description: "С солью или перцем чили", price: 150 },
-  { id: "fraychips", category: "snacks", name: "Фрайчипс", description: "BBQ или сырные", price: null, unit: "30 г" },
+  { id: "fraychips", category: "snacks", name: "Фрайчипс", description: "BBQ или сырные", price: null, unit: "30\u00a0г" },
 
   { id: "sladkiy-churros", category: "sweet", name: "Сладкий чуррос", description: "Заварное тесто во фритюре с домашним шоколадным соусом", price: 290 },
   { id: "churros-karri", category: "sweet", name: "Чуррос с карри", description: "Заварное тесто во фритюре с сырным соусом", price: 230 },
-  { id: "sousy", category: "sweet", name: "Соус на выбор", description: "BBQ, сеульский с арахисом, FRY-1, сырный, тар-тар, томатный карри, чесночный, шрирача, шоколадный", price: 50, unit: "30 г" },
+  { id: "sousy", category: "sweet", name: "Соус на выбор", description: "BBQ, сеульский с арахисом, FRY-1, сырный, тар-тар, томатный карри, чесночный, шрирача, шоколадный", price: 50, unit: "30\u00a0г" },
 ];
 
 /** Соусы для облака на лотке «К пиву» */
@@ -68,5 +68,5 @@ export const nastoyki = {
 } as const;
 
 export function formatMenuPrice(price: number | null) {
-  return price === null ? "цена у бара" : `${price} ₽`;
+  return price === null ? "цена у бара" : `${price}\u00a0₽`;
 }

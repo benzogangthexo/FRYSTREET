@@ -43,7 +43,7 @@ const trays: Tray[] = [
   {
     id: "snacks",
     title: "К пиву",
-    note: "Закуски и соусы по 50 ₽",
+    note: "Закуски и соусы по 50\u00a0₽",
     items: ["syrnye-palochki", "lukovye-kolca", "chechil-fri", "grenki"],
   },
 ];
@@ -60,9 +60,9 @@ export function MenuTrays() {
           <div className="lg:col-span-7">
             <Eyebrow index="02">Меню</Eyebrow>
             <h2 id="menu-title" className="t-h1 mt-6">
-              Едят руками,
+              Фри, доги
               <br />
-              запивают пивом
+              и тортилья
             </h2>
           </div>
           <p className="t-lead text-fg-muted lg:col-span-4 lg:col-start-9">
@@ -120,7 +120,7 @@ function TrayCard({ tray, index, total }: { tray: Tray; index: number; total: nu
       )}
 
       <div className="flex min-h-0 flex-col px-4 pb-3 pt-2 sm:px-7 sm:pb-6 md:col-span-7 md:py-9 md:pl-6 md:pr-10 lg:pl-10">
-        <div className="t-eyebrow flex items-center justify-between gap-4 opacity-80">
+        <div className="t-eyebrow flex items-center justify-between gap-4">
           <span className="tabular">
             Лоток {String(index + 1).padStart(2, "0")}/{String(total).padStart(2, "0")}
           </span>
@@ -137,7 +137,7 @@ function TrayCard({ tray, index, total }: { tray: Tray; index: number; total: nu
             >
               <span className="min-w-0 flex-1">
                 <span className="block font-display text-[clamp(1.2rem,1rem+1vw,1.9rem)] font-extrabold uppercase leading-[1.02]">{it.name}</span>
-                <span className="mt-1 hidden text-[0.9rem] leading-snug opacity-80 md:block">{it.description}</span>
+                <span className={cn("mt-1 hidden text-[0.9rem] leading-snug md:block", !red && "opacity-80")}>{it.description}</span>
               </span>
               <span className={cn("price text-[clamp(1.35rem,1.1rem+1.2vw,2.2rem)] leading-none", !red && "text-[var(--red-deep)]")}>
                 {formatMenuPrice(it.price)}

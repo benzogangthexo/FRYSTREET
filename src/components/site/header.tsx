@@ -12,8 +12,9 @@ export function Header() {
   return (
     <header className="relative z-20">
       <Container className="flex h-[var(--header-h)] items-center justify-between gap-4 pt-2">
-        <a href="#hero" aria-label="FRY Street Food Pub, в начало страницы" className="-my-2 inline-flex min-h-11 items-center py-2 text-[13px]">
+        <a href="#hero" className="-my-2 inline-flex min-h-11 items-center py-2 text-[13px]">
           <Wordmark />
+          <span className="sr-only">, в начало страницы</span>
         </a>
 
         <nav aria-label="Разделы" className="hidden lg:block">

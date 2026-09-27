@@ -50,7 +50,7 @@ export function Reviews() {
                   </blockquote>
                   <figcaption className="mt-5 flex items-center justify-between gap-3 text-sm">
                     <span className="font-semibold">{r.author}</span>
-                    <span className="opacity-80">
+                    <span>
                       {r.source}, {r.date}
                     </span>
                   </figcaption>

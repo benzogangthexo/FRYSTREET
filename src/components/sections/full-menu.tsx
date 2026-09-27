@@ -9,8 +9,7 @@ import { FilterChips } from "@/components/ui/filter-chips";
 import { formatMenuPrice, menuCategories, type MenuItem } from "@/content/menu";
 import { menuPhotos } from "@/content/photos";
 import { useResource } from "@/hooks/use-resource";
-import { apiFetch } from "@/lib/api/client";
-import { MenuResponseSchema, type MenuResponse } from "@/lib/api/schemas";
+import type { MenuResponse } from "@/lib/api/schemas";
 import { filterMenu, menuKey, type MenuFilter } from "@/lib/menu";
 import { cn } from "@/lib/utils";
 
@@ -110,12 +109,15 @@ export function FullMenu({ initial }: { initial: MenuResponse }) {
 
   const res = useResource<MenuResponse>(
     key,
-    (signal) =>
-      apiFetch(`/api/menu?category=${category}&q=${encodeURIComponent(debounced)}`, {
+    async (signal) => {
+      // zod и API-клиент грузятся при первом запросе: на старте страницы их JS не нужен
+      const [{ apiFetch }, { MenuResponseSchema }] = await Promise.all([import("@/lib/api/client"), import("@/lib/api/schemas")]);
+      return apiFetch(`/api/menu?category=${category}&q=${encodeURIComponent(debounced)}`, {
         schema: MenuResponseSchema,
         signal,
         retries: 1,
-      }),
+      });
+    },
     { initial: { key: menuKey("all", ""), data: initial }, isEmpty: (d) => d.items.length === 0 },
   );
 

@@ -100,26 +100,25 @@ export function Yard() {
                 <rect width="360" height="290" fill="url(#yard-grid)" />
                 <path data-draw d="M10 70H350" stroke="var(--fg)" strokeWidth="3" fill="none" />
                 <path data-draw d="M10 84H350" stroke="var(--fg-muted)" strokeWidth="1" fill="none" />
-                <text x="236" y="58" fill="var(--fg-muted)" fontSize="13" fontWeight="600" letterSpacing="2">
+                <text x="216" y="58" fill="var(--fg-muted)" fontSize="15" fontWeight="600" letterSpacing="2">
                   УЛ. ЛЕНИНА
                 </text>
                 <circle cx="62" cy="77" r="17" fill="var(--bg-2)" stroke="var(--red-ink)" strokeWidth="2.5" />
                 <text x="62" y="83" textAnchor="middle" fill="var(--red-ink)" fontSize="17" fontWeight="700">
                   М
                 </text>
-                <text x="20" y="40" fill="var(--fg)" fontSize="14" fontWeight="600">
+                <text x="16" y="38" fill="var(--fg)" fontSize="17" fontWeight="600">
                   Площадь Ленина
                 </text>
                 <path
                   data-draw
                   d="M62 96V160Q62 176 78 176H232Q248 176 248 192V204"
                   stroke="var(--brand-2)"
-                  strokeWidth="2.5"
-                  strokeDasharray="6 6"
+                  strokeWidth="3"
                   fill="none"
                   strokeLinecap="round"
                 />
-                <text x="84" y="166" fill="var(--brand-2)" fontSize="14" fontWeight="600">
+                <text x="80" y="164" fill="var(--brand-2)" fontSize="17" fontWeight="600">
                   200 м · 2 минуты
                 </text>
                 <path data-draw d="M178 206H318V272H178Z" stroke="var(--fg)" strokeWidth="2" fill="none" />
@@ -127,10 +126,10 @@ export function Yard() {
                 <text x="248" y="248" textAnchor="middle" className="font-display" fontSize="34" fontWeight="900" fill="var(--red-ink)">
                   FRY
                 </text>
-                <text x="20" y="232" fill="var(--fg-muted)" fontSize="13">
+                <text x="16" y="232" fill="var(--fg-muted)" fontSize="16">
                   Ленина, 6 к1
                 </text>
-                <text x="20" y="252" fill="var(--fg-muted)" fontSize="13">
+                <text x="16" y="254" fill="var(--fg-muted)" fontSize="16">
                   павильон во дворе
                 </text>
               </svg>

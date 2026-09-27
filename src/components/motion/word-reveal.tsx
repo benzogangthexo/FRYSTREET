@@ -5,7 +5,7 @@ import { useEffect, useRef, type ElementType } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { motionAllowed } from "./use-scroll-anim";
+import { motionAllowed, onIdle } from "./use-scroll-anim";
 
 /**
  * Паттерн 2: проявление текста от скролла, по словам (stagger) с opacity + blur.
@@ -42,8 +42,15 @@ export function WordReveal({
         s.filter = v >= 1 ? "none" : `blur(${((1 - v) * 7).toFixed(2)}px)`;
       }
     };
-    apply(0);
-    return scroll(apply, { target: el, offset: ["start 0.85", "end 0.45"] });
+    let stop: (() => void) | undefined;
+    const cancel = onIdle(() => {
+      apply(0);
+      stop = scroll(apply, { target: el, offset: ["start 0.85", "end 0.45"] });
+    });
+    return () => {
+      cancel();
+      stop?.();
+    };
   }, [text]);
 
   return (

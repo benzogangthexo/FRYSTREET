@@ -234,9 +234,7 @@
     overflow-wrap: break-word;
     hyphens: manual;
   }
-  p,
-  li,
-  blockquote {
+  p {
     text-wrap: pretty;
   }
   a {
@@ -434,12 +432,12 @@ html.has-cursor [role="button"] {
   place-items: center;
   background: var(--preloader-bg, var(--bg-2));
   color: var(--preloader-fg, var(--fg));
-  animation: pl-lift 0.9s var(--ease-in-out) 1.25s forwards;
+  animation: pl-lift 0.7s var(--ease-in-out) 0.95s forwards;
   pointer-events: none;
 }
 .preloader__count {
   counter-reset: pl var(--pl-n);
-  animation: pl-count 1.2s var(--ease-out-quart) forwards;
+  animation: pl-count 0.9s var(--ease-out-quart) forwards;
   font-variant-numeric: tabular-nums;
 }
 .preloader__count::after {
@@ -489,7 +487,7 @@ html:not(.rm) .mask-immediate > span {
   animation-delay: calc(var(--mask-delay, 0s) + var(--i, 0) * 0.08s);
 }
 html:not(.rm):not(.pl-skip) .mask-immediate > span {
-  --mask-delay: 1.35s;
+  --mask-delay: 1.05s;
 }
 @keyframes mask-up {
   to {
@@ -503,7 +501,7 @@ html:not(.rm) .fade-immediate {
   animation-delay: calc(var(--mask-delay, 0s) + var(--d, 0.3s));
 }
 html:not(.rm):not(.pl-skip) .fade-immediate {
-  --mask-delay: 1.35s;
+  --mask-delay: 1.05s;
 }
 @keyframes fade-up {
   to {
@@ -634,7 +632,7 @@ html:not(.js) [data-motion] {
 }
 .pl-letter {
   display: inline-block;
-  animation: pl-join 1.1s var(--ease-out-expo) both;
+  animation: pl-join 0.85s var(--ease-out-expo) both;
 }
 .pl-letter:nth-child(1) {
   --pl-x: -0.35em;

@@ -24,7 +24,7 @@ export function Parallax({
   useScrollAnim(
     ref,
     { transform: [`translate3d(0, ${-shift}vh, 0)`, `translate3d(0, ${shift}vh, 0)`] },
-    { offset: ["start end", "end start"] },
+    { offset: ["start end", "end start"], eager: true },
   );
   return (
     <div ref={ref} data-motion className={cn("will-change-transform", className)}>

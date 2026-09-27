@@ -2,7 +2,7 @@ import { MessageCircle, Phone } from "lucide-react";
 
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
-import { BookingWizard } from "@/components/booking/booking-wizard";
+import { BookingLazy } from "@/components/booking/booking-lazy";
 import { Button } from "@/components/ui/button";
 import { site } from "@/content/site";
 import { telHref } from "@/lib/utils";
@@ -53,7 +53,7 @@ export function Booking() {
         </div>
 
         <div className="lg:col-span-7">
-          <BookingWizard
+          <BookingLazy
             className="booking-card rounded-[var(--radius)] bg-bg p-5 text-fg shadow-[var(--shadow-lift)] sm:p-8"
             successNote={<>Перезвоним с номера {site.phone}, чтобы подтвердить стол. Если планы поменяются, просто скажите бармену.</>}
           />

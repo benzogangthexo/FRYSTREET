@@ -273,7 +273,7 @@ export function BookingWizard({ className, successNote }: { className?: string; 
           <span className="t-eyebrow">Заявка принята</span>
         </div>
         <h3 ref={heading} tabIndex={-1} className="t-h3 mt-5 outline-none">
-          Ждём вас. Номер записи <span className="tabular text-brand">{result.code}</span>
+          Ждём вас. Номер записи <span className="tabular text-[var(--red-ink)]">{result.code}</span>
         </h3>
         <dl className="mt-6 divide-y divide-line border-y border-line">
           {result.summary.map((row) => (
@@ -574,7 +574,7 @@ function ChoiceStep({
               {o.note ? <span className="mt-0.5 block text-sm text-fg-muted">{o.note}</span> : null}
             </span>
             <span className="flex shrink-0 flex-col items-end gap-1">
-              {o.price ? <span className="tabular text-sm text-brand">{o.price}</span> : null}
+              {o.price ? <span className="tabular text-sm text-[var(--red-ink)]">{o.price}</span> : null}
               {o.badge ? (
                 <span className="rounded-[var(--radius-pill)] border border-line px-2 text-xs text-fg-muted">{o.badge}</span>
               ) : null}

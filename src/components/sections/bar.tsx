@@ -27,9 +27,9 @@ export function Bar() {
           <div className="order-1 lg:order-2 lg:col-span-7">
             <Eyebrow index="04">Бар</Eyebrow>
             <h2 id="bar-title" className="t-h1 mt-6">
-              Пиво с кранов,
+              Крафт, сидр
               <br />
-              сидр <span className="text-[var(--red-ink)]">и настойки</span>
+              <span className="text-[var(--red-ink)]">и настойки</span>
             </h2>
             <dl className="mt-10 grid gap-px overflow-hidden rounded-[var(--radius)] border border-line bg-line sm:grid-cols-2">
               <div className="bg-bg p-5 sm:p-7">

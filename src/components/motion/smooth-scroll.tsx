@@ -38,7 +38,9 @@ export function SmoothScroll() {
       scrollToTarget(el);
     };
     document.addEventListener("click", onClick);
-    if (reduced()) return () => document.removeEventListener("click", onClick);
+    // На таче Lenis не сглаживает, а его rAF-цикл только грузит поток: там нативный скролл
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    if (reduced() || !fine) return () => document.removeEventListener("click", onClick);
 
     const instance = new Lenis({ lerp: 0.1, smoothWheel: true, autoRaf: true });
     lenis = instance;

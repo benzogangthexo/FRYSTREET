@@ -35,11 +35,22 @@ export function GiantWordmark({
       const target = box.clientWidth;
       if (width > 0) line.style.fontSize = `${(parseFloat(getComputedStyle(line).fontSize) * target) / width}px`;
     };
-    fit();
     const ro = new ResizeObserver(fit);
-    ro.observe(box);
-    void document.fonts?.ready.then(fit);
-    return () => ro.disconnect();
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((e) => e.isIntersecting)) return;
+        io.disconnect();
+        fit();
+        ro.observe(box);
+        void document.fonts?.ready.then(fit);
+      },
+      { rootMargin: "600px 0px" },
+    );
+    io.observe(box);
+    return () => {
+      io.disconnect();
+      ro.disconnect();
+    };
   }, [text]);
 
   return (

@@ -14,7 +14,6 @@ import "./globals.css";
 /* Заголовки: Sofia Sans Extra Condensed (ближе всего к конденсированному FRY логотипа), текст: Geologica */
 const display = localFont({
   src: [
-    { path: "../fonts/sofia-sans-extra-condensed-800.woff2", weight: "800", style: "normal" },
     { path: "../fonts/sofia-sans-extra-condensed-900.woff2", weight: "900", style: "normal" },
   ],
   variable: "--ff-display",

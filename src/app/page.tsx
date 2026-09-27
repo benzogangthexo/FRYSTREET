@@ -37,7 +37,7 @@ export default function Home() {
         <Booking />
       </main>
       <Footer />
-      <MobileCta label="Забронировать стол" phone={site.phone} heroId="hero" targetId="booking" />
+      <MobileCta label="Забронировать стол" phone={site.phone} heroId="hero-cta" targetId="booking" />
     </>
   );
 }

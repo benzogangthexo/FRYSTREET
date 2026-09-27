@@ -50,6 +50,7 @@ export function Hero() {
                   alt="Стена из плакатов и живых растений в зале FRY"
                   fill
                   preload
+                  fetchPriority="high"
                   quality={75}
                   sizes="(min-width: 1440px) 420px, (min-width: 1024px) 29vw, (min-width: 576px) 400px, 70vw"
                   placeholder="blur"
@@ -97,9 +98,9 @@ export function Hero() {
 
         <div className="lg:col-span-7 lg:row-start-2">
           <p className="fade-immediate t-lead max-w-[36ch]" style={delay("0.35s")}>
-            Бар во дворе на Ленина, 6. Пиво с кранов, сидр, свои настойки, корн-доги и фри в фирменной бумаге.
+            Павильон во дворе на Ленина, 6, две минуты от метро. Корн-доги, путин и буррито в бумаге FRY, к ним разливное, сидр и свои настойки.
           </p>
-          <div className="fade-immediate mt-8 flex flex-wrap items-center gap-3" style={delay("0.45s")}>
+          <div id="hero-cta" className="fade-immediate mt-8 flex flex-wrap items-center gap-3" style={delay("0.45s")}>
             <MagneticButton asChild size="lg">
               <a href="#booking">Забронировать стол</a>
             </MagneticButton>
