@@ -70,3 +70,31 @@ export const BookingResponseSchema = z.object({
   summary: z.array(z.object({ label: z.string(), value: z.string() })),
 });
 export type BookingResponse = z.infer<typeof BookingResponseSchema>;
+
+/* ============ меню ============ */
+export const MENU_CATEGORY_IDS = ["fries", "tortilla", "dogs", "snacks", "sweet"] as const;
+export const MenuCategorySchema = z.enum(MENU_CATEGORY_IDS);
+
+export const MenuQuerySchema = z.object({
+  category: z.string().max(24, "Слишком длинная категория").default("all"),
+  q: z.string().max(40, "Запрос длиннее 40 символов").default(""),
+});
+
+export const MenuItemSchema = z.object({
+  id: z.string(),
+  category: MenuCategorySchema,
+  name: z.string(),
+  description: z.string().optional(),
+  price: z.number().int().positive().nullable(),
+  unit: z.string().optional(),
+  photo: z.enum(["fries", "friesLoaded", "tacos", "quesadilla", "burger", "corndog"]).optional(),
+});
+export type MenuItemDto = z.infer<typeof MenuItemSchema>;
+
+export const MenuResponseSchema = z.object({
+  category: z.string(),
+  query: z.string(),
+  total: z.number().int().nonnegative(),
+  items: z.array(MenuItemSchema),
+});
+export type MenuResponse = z.infer<typeof MenuResponseSchema>;
