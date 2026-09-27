@@ -27,8 +27,11 @@ export function HoverImageList({
   className,
   rowClassName,
   previewClassName = "h-[15rem] w-[12rem] rounded-[var(--radius)]",
+  placeholder,
 }: {
   items: HoverImageItem[];
+  /** миниатюра для строк без фото (видна только на таче, как и сами миниатюры) */
+  placeholder?: ReactNode;
   className?: string;
   rowClassName?: string;
   previewClassName?: string;
@@ -78,6 +81,10 @@ export function HoverImageList({
                   quality={70}
                   className="hover-thumb size-16 shrink-0 rounded-[calc(var(--radius)-4px)] object-cover sm:size-20"
                 />
+              ) : placeholder ? (
+                <span aria-hidden="true" className="hover-thumb size-16 shrink-0 sm:size-20">
+                  {placeholder}
+                </span>
               ) : null}
               <span className="min-w-0 flex-1">
                 <span className="block transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:translate-x-3">

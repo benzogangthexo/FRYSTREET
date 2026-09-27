@@ -17,7 +17,9 @@ export function MaskReveal({
   immediate = false,
   className,
   lineClassName,
+  id,
 }: {
+  id?: string;
   lines: React.ReactNode[];
   as?: ElementType;
   immediate?: boolean;
@@ -44,7 +46,7 @@ export function MaskReveal({
   }, [immediate]);
 
   return (
-    <Tag ref={ref} className={className}>
+    <Tag ref={ref} id={id} className={className}>
       {lines.map((line, i) => (
         <span
           key={i}
