@@ -1,0 +1,5 @@
+:HL["/FRYSTREET/_next/static/chunks/3549ya9mguk18.css","style"]
+:HL["/FRYSTREET/_next/static/media/geologica_400-s.p.3-yk1z-r1bh1w.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/FRYSTREET/_next/static/media/geologica_600-s.p.3722ops_ce3_c.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/FRYSTREET/_next/static/media/sofia_sans_extra_condensed_900-s.p.414jh6jfxxw-r.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"nWpp4azFNJA5tplSG7kWx"}
