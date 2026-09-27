@@ -1,34 +1,47 @@
 import type { BookingConfig } from "@/lib/booking";
 
-/* Конфиг записи заведения: часы, зона, шаги с реальными услугами и ценами */
+/*
+ * Бронь стола в FRY. Часы по Яндексу: пн-чт и вс 14:00-02:00, пт-сб 14:00-04:00 (закрытие после полуночи).
+ * Слоты по 30 минут, последний за 90 минут до закрытия, зона Asia/Novosibirsk.
+ * Места: зал со стойкой и двор с летней верандой (Яндекс: «летняя веранда»; 2ГИС: «столики на улице»).
+ */
 export const bookingConfig: BookingConfig = {
-  codePrefix: "DEMO",
-  timeZone: "Europe/Moscow",
+  codePrefix: "FRY",
+  timeZone: "Asia/Novosibirsk",
   slotMinutes: 30,
   leadMinutes: 60,
-  lastSlotBeforeClose: 60,
+  lastSlotBeforeClose: 90,
   daysAhead: 14,
   busyShare: 0.3,
   week: [
-    { open: "12:00", close: "00:00" },
-    { open: "12:00", close: "00:00" },
-    { open: "12:00", close: "00:00" },
-    { open: "12:00", close: "00:00" },
-    { open: "12:00", close: "00:00" },
-    { open: "12:00", close: "02:00" },
-    { open: "12:00", close: "02:00" },
+    { open: "14:00", close: "02:00" },
+    { open: "14:00", close: "02:00" },
+    { open: "14:00", close: "02:00" },
+    { open: "14:00", close: "02:00" },
+    { open: "14:00", close: "02:00" },
+    { open: "14:00", close: "04:00" },
+    { open: "14:00", close: "04:00" },
   ],
   steps: [
     {
       id: "guests",
-      title: "Сколько гостей",
+      title: "Сколько вас",
+      columns: 2,
       options: [
         { id: "2", label: "1-2 гостя" },
         { id: "4", label: "3-4 гостя" },
         { id: "6", label: "5-6 гостей" },
-        { id: "10", label: "7-10 гостей", note: "Уточним по телефону" },
+        { id: "8", label: "7 и больше", note: "Перезвоним и сдвинем столы" },
+      ],
+    },
+    {
+      id: "place",
+      title: "Где сесть",
+      options: [
+        { id: "hall", label: "В зале", note: "У барной стойки или за столом" },
+        { id: "yard", label: "Во дворе", note: "Летняя веранда и столики на улице", badge: "летом" },
       ],
     },
   ],
-  phone: "+7 (900) 000-00-00",
+  phone: "+7 (923) 252-75-51",
 };
